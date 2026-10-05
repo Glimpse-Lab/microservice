@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo orçamento recebido</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; background: #f2f4f7; margin:0; padding:20px; color:#344154;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align="center">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:8px; overflow:hidden;">
+            <tr style="background:#0ea5a4; color:#fff;"><td style="padding:20px 24px;">
+                <h1 style="margin:0; font-size:20px;">Novo orçamento recebido</h1>
+                <p style="margin:6px 0 0; font-size:13px;">Um novo orçamento foi enviado no sistema GPM.</p>
+            </td></tr>
+            <tr><td style="padding:20px 24px;">
+                <p><strong>ID:</strong> <span th:text="${orcamentoId}"></span></p>
+                <p><strong>Status:</strong> <span th:text="${status}"></span></p>
+                <p><strong>Cliente:</strong> <span th:text="${clienteNome}"></span></p>
+                <p><strong>E-mail do cliente:</strong> <span th:text="${clienteEmail}"></span></p>
+                <p><strong>Data:</strong> <span th:text="${dataSolicitacao}"></span></p>
+                <p><strong>Endereço:</strong> <span th:text="${endereco}"></span></p>
+                <div style="margin-top:14px; padding:14px; background:#f9fafb; border:1px solid #eef2f7;">
+                    <p><strong>Descrição do projeto</strong></p>
+                    <div th:text="${descricaoProjeto}"></div>
+                </div>
+                <p style="margin-top:20px;"><a th:href="${baseUrl + '/admin/orcamentos'}" style="display:inline-block; padding:10px 14px; background:#0ea5a4; color:#ffffff; text-decoration:none;">Abrir orçamento</a></p>
+            </td></tr>
+            <tr><td style="background:#fbfdff; padding:12px 24px; font-size:12px; color:#6b7280;">Este é um e-mail automático do sistema GPM. Não responda diretamente.</td></tr>
+        </table>
+        <p style="font-size:12px; color:#9ca3af;">GPM — Gestão de Projetos e Materiais</p>
+    </td></tr>
+</table>
+</body>
+</html>

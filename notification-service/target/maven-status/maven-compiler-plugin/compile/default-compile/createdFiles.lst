@@ -1,0 +1,7 @@
+com\glimpse\notification\config\ThymeleafConfig.class
+com\glimpse\notification\listener\OrcamentoEnviadoListener.class
+com\glimpse\notification\config\RabbitMQConfig.class
+com\glimpse\notification\config\AsyncConfig.class
+com\glimpse\notification\dto\OrcamentoEnviadoMessage.class
+com\glimpse\notification\NotificationServiceApplication.class
+com\glimpse\notification\service\EmailService.class

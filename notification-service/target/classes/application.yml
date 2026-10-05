@@ -1,0 +1,53 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: notification-service
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: ${RABBITMQ_CONCURRENCY:2}
+        max-concurrency: ${RABBITMQ_MAX_CONCURRENCY:5}
+        prefetch: ${RABBITMQ_PREFETCH:10}
+        default-requeue-rejected: false
+        retry:
+          enabled: true
+          initial-interval: 2000
+          max-attempts: 3
+          multiplier: 2
+  mail:
+    host: ${MAIL_HOST:smtp-relay.brevo.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+
+app:
+  base-url: ${APP_BASE_URL:http://localhost:5173}
+  admin:
+    email: ${ADMIN_EMAIL:admin@gpm.com}
+  mail:
+    from: ${MAIL_FROM:glimpse.lab26@gmail.com}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when_authorized
