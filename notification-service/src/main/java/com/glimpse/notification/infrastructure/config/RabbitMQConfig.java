@@ -1,4 +1,4 @@
-package com.glimpse.notification.config;
+package com.glimpse.notification.infrastructure.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -75,11 +75,6 @@ public class RabbitMQConfig {
         return template;
     }
 
-    /**
-     * Liga o bean Validator (Hibernate) ao MessageHandlerMethodFactory default dos
-     * @RabbitListener. Sem isso, o @Valid @Payload dos listeners é ignorado — o Spring
-     * Boot não valida payloads de mensagens Rabbit automaticamente (diferente do MVC).
-     */
     @Bean
     public RabbitListenerConfigurer rabbitListenerConfigurer(Validator validator) {
         return registrar -> registrar.setValidator(validator);
