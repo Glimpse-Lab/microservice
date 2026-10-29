@@ -1,4 +1,4 @@
-package com.glimpse.notification.config;
+package com.glimpse.notification.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

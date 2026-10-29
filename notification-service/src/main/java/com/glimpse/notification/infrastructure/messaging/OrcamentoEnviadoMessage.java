@@ -1,4 +1,4 @@
-package com.glimpse.notification.dto;
+package com.glimpse.notification.infrastructure.messaging;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Email;
@@ -16,5 +16,4 @@ public record OrcamentoEnviadoMessage(
         @NotBlank String status,
         @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         LocalDateTime dataSolicitacao
-) {
-}
+) {}
